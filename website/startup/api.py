@@ -1,13 +1,25 @@
-from startup.models import Team
+from startup.models import Startups,Startupmembers,Startupprojects,Investors,Mentors
 from rest_framework import viewsets, permissions
-from .serializers import TeamSerializer
-
+from .serializers import StartupSerializer,InvestorSerializer,MentorSerializer
 # Lead Viewset
 
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = Team.objects.all()
+class StartupsViewSet(viewsets.ModelViewSet):
+    queryset = Startups.objects.all()
     permission_classes = [
         permissions.AllowAny,
     ]
-    serializer_class = TeamSerializer
+    serializer_class = StartupSerializer
+
+class InvestorsViewSet(viewsets.ModelViewSet):
+    queryset = Investors.objects.all()
+    permission_classes = [
+        permissions.AllowAny,
+    ]
+    serializer_class = InvestorSerializer
+
+class MentorsViewSet(viewsets.ModelViewSet):
+    queryset = Mentors.objects.all()
+    permission_classes = [
+        permissions.AllowAny,
+    ]
+    serializer_class = MentorSerializer
