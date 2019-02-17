@@ -13,5 +13,6 @@ cd website
 python manage.py runserver
 
 For frontend:
-open the html file
-:D
+open index.html file
+
+:P
